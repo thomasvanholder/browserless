@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A Ruby wrapper for the Browserless PDF API. This gem simplifies the process of generating PDFs from web pages by abstracting the API's underlying HTTP requests and responses."
   spec.description = "This gem provides a simple and intuitive interface for interacting with the Browserless PDF API. It handles all the HTTP requests and responses, and provides methods for configuring the API endpoint, setting authentication credentials, and specifying options for the PDF generation process. This gem is perfect for developers who want to generate PDFs from web pages without having to deal with the complexities of the underlying API."
-  spec.homepage = "https://www.browserless.io/"
+  spec.homepage = "https://github.com/thomasvanholder/browserless"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
-  spec.metadata["homepage_uri"] = "https://www.browserless.io/"
+  spec.metadata["homepage_uri"] = "https://github.com/thomasvanholder/browserless"
   spec.metadata["source_code_uri"] = "https://github.com/thomasvanholder/browserless"
-  spec.metadata["changelog_uri"] = "https://www.browserless.io/"
+  spec.metadata["changelog_uri"] = "https://github.com/thomasvanholder/browserless"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
