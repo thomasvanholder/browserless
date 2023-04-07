@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require "debug"
 require "json"
 require "httparty"
 
-require_relative "browserless/version"
 require_relative "browserless/configuration"
 require_relative "browserless/client"
+require_relative "browserless/version"
 
 module Browserless
   class << self
