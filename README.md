@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/browserless.svg)](https://badge.fury.io/rb/browserless)
+
 # Browserless Gem
 
 Introducing the "Browserless" gem - a Ruby gem that provides a convenient wrapper around the [Browserless PDF API](https://www.browserless.io/docs/pdf). Browserless relies on puppeteer to convert modern CSS into a PDF. The goal of this gem is to enables developers to easily generate PDF documents from the HTML you already have.
