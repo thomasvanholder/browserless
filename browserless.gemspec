@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Thomas Van Holder"]
   spec.email = ["thomasvanholder@hey.com"]
 
-  spec.summary = "A Ruby wrapper for the Browserless PDF API. This gem simplifies the process of generating PDFs from web pages by abstracting the API's underlying HTTP requests and responses."
-  spec.description = "This gem provides a simple and intuitive interface for interacting with the Browserless PDF API. It handles all the HTTP requests and responses, and provides methods for configuring the API endpoint, setting authentication credentials, and specifying options for the PDF generation process. This gem is perfect for developers who want to generate PDFs from web pages without having to deal with the complexities of the underlying API."
+  spec.summary = "A Ruby wrapper for the Browserless PDF API with support for modern CSS such as TailwindCSS"
+  spec.description = "This gem provides a simple interface for interacting with the Browserless PDF API. It handles all the HTTP requests and responses, and provides methods for configuring the API endpoint, setting authentication credentials, and specifying options for the PDF generation process. This gem is ideal for developers who want to generate PDFs without managing any infrastructure."
   spec.homepage = "https://github.com/thomasvanholder/browserless"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
