@@ -5,7 +5,7 @@ module Browserless
     HEADER_TEMPLATE = "<div></div>" # empty header
     FOOTER_TEMPLATE = "<div style='font-size: 11px; margin-left: 40px; font: Helvetica'><span class='pageNumber'></span> of <span class='totalPages'></span></div>"
 
-    attr_reader :display_header_footer, :margin, :pdf_format, :print_background, :header_template, :footer_template, :options, :landscape
+    attr_reader :display_header_footer, :margin, :pdf_format, :print_background, :header_template, :footer_template, :options, :landscape, :timeout
 
     def initialize(**options)
       @options = options
@@ -16,6 +16,7 @@ module Browserless
       @header_template = config_value(:header_template) || HEADER_TEMPLATE
       @footer_template = config_value(:footer_template) || FOOTER_TEMPLATE
       @display_header_footer = config_value(:display_header_footer) || false
+      @timeout = config_value(:timeout) || 0
     end
 
     def to_h
@@ -26,7 +27,8 @@ module Browserless
         margin: margin,
         format: pdf_format,
         headerTemplate: header_template,
-        footerTemplate: footer_template
+        footerTemplate: footer_template,
+        timeout: timeout
       }
     end
 

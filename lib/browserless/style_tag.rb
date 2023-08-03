@@ -1,6 +1,23 @@
 # frozen_string_literal: true
 
 module Browserless
+  class StyleTags
+    attr_reader :style_tags
+
+    def initialize(style_tags = [])
+      @style_tags = Array(style_tags)
+    end
+
+    def to_a
+      style_tags.filter_map do |style_tag|
+        tag = StyleTag.new(style_tag).to_h
+        next if tag.key?(:content) && tag[:content].nil?
+
+        tag
+      end
+    end
+  end
+
   class StyleTag
     attr_reader :style_tag
 

@@ -5,7 +5,7 @@ module Browserless
 
   class Configuration
     attr_writer :api_key
-    attr_accessor :options, :emulate_media, :style_tag
+    attr_accessor :options, :goto_options, :emulate_media, :style_tag
 
     BASE_URL = "https://chrome.browserless.io/pdf?token="
 

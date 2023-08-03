@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
 require_relative "options"
+require_relative "goto_options"
 require_relative "style_tag"
 
 module Browserless
   class ApikeyError < StandardError; end
 
   class Client
-    attr_reader :html, :url, :style_tag, :emulate_media, :options
+    attr_reader :html, :url, :style_tag, :emulate_media, :options, :goto_options
 
-    def initialize(html:, options: {}, **kwargs)
+    def initialize(html:, options: {}, goto_options: {}, **kwargs)
       @html = html
       @options = Options.new(**options).to_h
-      @style_tag = StyleTag.new(kwargs[:style_tag]).to_h
+      @goto_options = GotoOptions.new(**goto_options).to_h
+      @style_tag = StyleTags.new(kwargs[:style_tag]).to_a
       @emulate_media = config_value(:emulate_media, kwargs[:emulate_media]) || "screen"
       @url = Browserless.configuration.url
     end
@@ -60,8 +62,9 @@ module Browserless
         html: html,
         safeMode: safe_mode,
         emulateMedia: emulate_media,
-        addStyleTag: [style_tag],
-        options: options
+        addStyleTag: style_tag,
+        options: options,
+        gotoOptions: goto_options
       }
     end
 

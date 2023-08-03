@@ -24,7 +24,7 @@ class Browserless::ClientTest < Minitest::Test
 
     assert_equal "<html></html>", client.html
     assert_equal "screen", client.emulate_media
-    assert_equal({content: nil}, client.style_tag)
+    assert_equal([], client.style_tag)
     assert_equal Browserless.configuration.url, client.url
   end
 
@@ -39,7 +39,7 @@ class Browserless::ClientTest < Minitest::Test
   def test_initialize_with_style_tag
     client = Browserless::Client.new(html: "<html></html>", style_tag: "body { font-family: Arial; }")
 
-    assert_equal({content: "body { font-family: Arial; }"}, client.style_tag)
+    assert_equal([{content: "body { font-family: Arial; }"}], client.style_tag)
   end
 
   def test_initialize_with_custom_options
@@ -63,7 +63,8 @@ class Browserless::ClientTest < Minitest::Test
       margin: {},
       format: "A4",
       headerTemplate: "<div></div>",
-      footerTemplate: "<div style='font-size: 11px; margin-left: 40px; font: Helvetica'><span class='pageNumber'></span> of <span class='totalPages'></span></div>"
+      footerTemplate: "<div style='font-size: 11px; margin-left: 40px; font: Helvetica'><span class='pageNumber'></span> of <span class='totalPages'></span></div>",
+      timeout: 0
     }, client.options)
   end
 end
